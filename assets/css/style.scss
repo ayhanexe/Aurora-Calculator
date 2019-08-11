@@ -1,0 +1,106 @@
+html,
+body {
+    height:100%;
+    padding:0;
+    margin:0;
+}
+
+$calc_btn_width:70px;
+$calc_btn_margin:2px;
+$global_border_radius:15px;
+
+$screen_bg:#3D3D50;
+$screen_color:white;
+$screen_border-radius:7px;
+
+
+$calc_btn_bg:#3D3D50;
+$calc_btn_color:white;
+$calc_btn_border_radius:5px;
+
+.colorful {
+    background: linear-gradient(270deg, #ff002b, #ea3dc5, #8d3dea, #3d7eea, #3de9ea, #3dea90, #3dea4b, #e3ff00);
+    background-size: 1600% 1600%;
+
+    -webkit-animation: colorful 15s ease infinite;
+    -moz-animation: colorful 15s ease infinite;
+    -o-animation: colorful 15s ease infinite;
+    animation: colorful 15s ease infinite;
+}
+
+.calculator-container {
+    width:auto;
+    height:auto;
+    background-color:#313141;
+    padding:2px 0;
+    position: absolute;
+    top:50%;
+    left:50%;
+    border-radius:$global_border_radius;
+    transform:translate(-50%, -50%);
+    .calculator-content {
+        width:calc((#{$calc_btn_width} * 4) + (3 * 6px));
+        height:100%;
+        background-color:#313141;
+        border-radius:$global_border_radius;
+        padding:10px;
+        display:flex;
+        flex-direction:column;
+        -ms-flex-direction:column;
+        .calculator-screen-container {
+            width:100%;
+            height:50px;
+            background-color:$screen_bg;
+            border-radius:$screen_border-radius;
+            margin-bottom:3px;
+            #calculator-screen {
+                width:100%;
+                height:100%;
+                background-color:transparent;
+                border:0;
+                color:$screen_color;
+                text-indent:20px;
+                &:active,
+                &:focus {
+                    outline:0;
+                }
+            }
+        }
+        .controls-area {
+            width:auto;
+            height:auto;
+            display:flex;
+            flex-direction:row;
+            -ms-flex-direction:row;
+            flex-wrap:wrap;
+            .calculator-button {
+                width:$calc_btn_width;
+                height:$calc_btn_width;
+                background-color:$calc_btn_bg;
+                color:$calc_btn_color;
+                cursor:pointer;
+                border:none;
+                margin:$calc_btn_margin;
+                border-radius:$calc_btn_border_radius;
+                border:0px solid #22222D;
+                transition:border .15s ease-out, transform .15s ease-out;
+                &:active,
+                &:focus {
+                    outline:0;
+                }
+                &:active {
+                    transform:scale(1.05);
+                }
+                &:hover {
+                    border:2px solid rgba(255, 255, 255, .3);
+                }
+            }
+        }
+    }
+}
+
+@keyframes colorful {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}

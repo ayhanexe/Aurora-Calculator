@@ -1,0 +1,131 @@
+html,
+body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.colorful {
+  background: -webkit-gradient(linear, right top, left top, from(#ff002b), color-stop(#ea3dc5), color-stop(#8d3dea), color-stop(#3d7eea), color-stop(#3de9ea), color-stop(#3dea90), color-stop(#3dea4b), to(#e3ff00));
+  background: linear-gradient(270deg, #ff002b, #ea3dc5, #8d3dea, #3d7eea, #3de9ea, #3dea90, #3dea4b, #e3ff00);
+  background-size: 1600% 1600%;
+  -webkit-animation: colorful 15s ease infinite;
+  animation: colorful 15s ease infinite;
+}
+
+.calculator-container {
+  width: auto;
+  height: auto;
+  background-color: #313141;
+  padding: 2px 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 15px;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.calculator-container .calculator-content {
+  width: calc((70px * 4) + (3 * 6px));
+  height: 100%;
+  background-color: #313141;
+  border-radius: 15px;
+  padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  -ms-flex-direction: column;
+}
+
+.calculator-container .calculator-content .calculator-screen-container {
+  width: 100%;
+  height: 50px;
+  background-color: #3D3D50;
+  border-radius: 7px;
+  margin-bottom: 3px;
+}
+
+.calculator-container .calculator-content .calculator-screen-container #calculator-screen {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  border: 0;
+  color: white;
+  text-indent: 20px;
+}
+
+.calculator-container .calculator-content .calculator-screen-container #calculator-screen:active, .calculator-container .calculator-content .calculator-screen-container #calculator-screen:focus {
+  outline: 0;
+}
+
+.calculator-container .calculator-content .controls-area {
+  width: auto;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+  -ms-flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.calculator-container .calculator-content .controls-area .calculator-button {
+  width: 70px;
+  height: 70px;
+  background-color: #3D3D50;
+  color: white;
+  cursor: pointer;
+  border: none;
+  margin: 2px;
+  border-radius: 5px;
+  border: 0px solid #22222D;
+  -webkit-transition: border .15s ease-out, -webkit-transform .15s ease-out;
+  transition: border .15s ease-out, -webkit-transform .15s ease-out;
+  transition: border .15s ease-out, transform .15s ease-out;
+  transition: border .15s ease-out, transform .15s ease-out, -webkit-transform .15s ease-out;
+}
+
+.calculator-container .calculator-content .controls-area .calculator-button:active, .calculator-container .calculator-content .controls-area .calculator-button:focus {
+  outline: 0;
+}
+
+.calculator-container .calculator-content .controls-area .calculator-button:active {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+.calculator-container .calculator-content .controls-area .calculator-button:hover {
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+@-webkit-keyframes colorful {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes colorful {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+/*# sourceMappingURL=style.css.map */
