@@ -9,21 +9,23 @@ document.addEventListener('DOMContentLoaded', function() {
         progressCount = 0;
         dotCount = 0;
     
+    window.addEventListener('keyup', function(e) {
+        keyboardEvents(e)
+    })
     
     function init() {
         buttons = document.querySelectorAll('.calculator-button')
         screen = document.querySelector('#calculator-screen')
         buttons.forEach(function(button) {
             button.addEventListener('click', function() {
-                calculatorBtnClicked(this)
+                calculatorBtnClicked(this.getAttribute('data-value'))
                 renderCalculatorScreen(screenValue)
             })
         })
     }
     init()
     
-    function calculatorBtnClicked(button) {
-        let value = button.getAttribute('data-value')
+    function calculatorBtnClicked(value) {
         if(!isNaN(value)) {
             if(screenValue == '0') {
                 screenValue = Number(value)
@@ -85,6 +87,61 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     function renderCalculatorScreen(value) {
         screen.value = value
+    }
+    function keyboardEvents(e) {
+        let key = e.key;
+        switch(key) {
+            case 'Insert':
+                key = 0;
+            break;
+            case 'End':
+                key = 1;
+            break;
+            case 'ArrowDown':
+                key = 2;
+            break;
+            case 'PageDown':
+                key = 3;
+            break;
+            case 'ArrowLeft':
+                key = 4;
+            break;
+            case 'Clear':
+                key = 5;
+            break;
+            case 'ArrowRight':
+                key = 6;
+            break;
+            case 'Home':
+                key = 7;
+            break;
+            case 'ArrowUp':
+                key = 8;
+            break;
+            case 'PageUp':
+                key = 9;
+            break;
+            case 'Delete':
+                key = '.';
+            break;
+            case '/':
+                key = '/';
+            break;
+            case '*':
+                key = '/';
+            break;
+            case '-':
+                key = '-';
+            break;
+            case 'Backspace':
+                key = 'del';
+            break;
+            case 'Enter':
+                key = 'proc';
+            break;
+        }
+        calculatorBtnClicked(key)
+        renderCalculatorScreen(screenValue);
     }
     
     
